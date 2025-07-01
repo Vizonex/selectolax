@@ -458,7 +458,7 @@ cdef class LexborNode:
             lxb_dom_node_insert_before(self.node, self.node.first_child)
             replacing_node = self.node.first_child
         lxb_dom_node_destroy(<lxb_dom_node_t *> self.node)
-        self.node = current_node_tmp
+        self.node = replacing_node
 
     def unwrap_tags(self, list tags, delete_empty = False):
         """Unwraps specified tags from the HTML tree.
